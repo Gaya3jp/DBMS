@@ -1,0 +1,26 @@
+CREATE TABLE Student(Roll_no int Primary key,S_name varchar(20),S_Address varchar(20));
+CREATE TABLE Marksheet(Roll_no int,Sub1 int,Sub2 int,Sub3 int,Foreign key(Roll_no) REFERENCES Student(Roll_no));
+INSERT INTO Student values
+(
+1,'Rahul','Pattom'
+);
+INSERT INTO Student values
+(
+2,'Sachin','Ambalam mukku'                
+);
+INSERT INTO Student values
+( 
+3,'Saurav','Nalanchira'
+);
+INSERT INTO Marksheet values(1,78,89,94);
+INSERT INTO Marksheet values(2,54,65,77);
+INSERT INTO Marksheet values(3,23,78,46);
+Alter table marksheet add Grade varchar(2);
+Alter table marksheet drop column Sub2;
+Alter table student add phone_no int;
+Alter table student add constraint phone_no check(length(phone_no)=10);
+UPDATE student SET phone_no=9995327821 where Roll_no=1;
+UPDATE student SET phone_no=9995327831 where Roll_no=2;
+UPDATE student SET phone_no=9995327841 where Roll_no=3;
+
+
